@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ExchangeDemo
+//  Currency
 //
 //  Created by teo on 02/04/2020.
 //  Copyright © 2020 teonicel. All rights reserved.
@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class CurrencyListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupView()
     }
-
-
+    
+    private func setupView() {
+        
+    }
 }
 
