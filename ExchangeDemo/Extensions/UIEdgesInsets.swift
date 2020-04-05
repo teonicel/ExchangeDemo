@@ -6,4 +6,10 @@
 //  Copyright © 2020 teonicel. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIEdgeInsets {
+    init(margin: CGFloat) {
+        self.init(top: margin, left: margin, bottom: margin, right: margin)
+    }
+}

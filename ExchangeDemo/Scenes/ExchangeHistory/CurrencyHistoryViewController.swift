@@ -1,6 +1,6 @@
 //
 //  CurrencyHistory.swift
-//  Currency
+//  ExchangeDemo
 //
 //  Created by teo on 02/04/2020.
 //  Copyright © 2020 teonicel. All rights reserved.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class CurrencyHistoryViewController: UIViewController {
+class CurrencyHistoryViewController: UIViewController, CurrencyHistoryViewProtocol {
+    var viewModel: CurrencyHistoryViewModelProtocol?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -6,4 +6,10 @@
 //  Copyright © 2020 teonicel. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public extension UITableViewCell {
+  static var reuseKey: String {
+    return String(describing: self)
+  }
+}

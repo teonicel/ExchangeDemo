@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+public extension DateFormatter {
+    static let dateOnly: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
+}

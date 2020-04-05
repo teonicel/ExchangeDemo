@@ -6,4 +6,14 @@
 //  Copyright © 2020 teonicel. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol Presentable {
+    func toPresent() -> UIViewController?
+}
+
+extension UIViewController: Presentable {
+    func toPresent() -> UIViewController? {
+        return self
+    }
+}
