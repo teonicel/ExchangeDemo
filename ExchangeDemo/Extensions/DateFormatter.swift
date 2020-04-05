@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension DateFormatter {
+extension DateFormatter {
     static let dateOnly: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"

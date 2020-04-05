@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import RxSwift
 
 public protocol ErrorViewable {
-    var error: PublishSubject<Error> { get set }
+    var error: Error? { get set }
 }

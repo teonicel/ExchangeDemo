@@ -66,7 +66,7 @@ public struct Rate: Decodable {
     }
 }
 
-public enum Currency: String, Decodable {
+public enum Currency: String, Codable, CaseIterable {
     case EUR
     case CAD
     case HKD

@@ -7,12 +7,18 @@
 //
 
 import UIKit
-import RxSwift
 
 final class CurrencyListViewController: UIViewController, CurrencyListViewProtocol {
-    var viewModel: CurrencyListViewModelProtocol?
+   
     private let tableView: UITableView = UITableView(frame: .zero)
-    let bag = DisposeBag()
+    
+    public let currencyLabel: UILabel = .exchangeDefault(textAlignment: .left)
+    
+    public let dateLabel: UILabel = .exchangeDefault(textAlignment: .right)
+    
+    private let stackView: UIStackView = .horizontalEqual()
+    
+    var viewModel: CurrencyListViewModelProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,27 +29,46 @@ final class CurrencyListViewController: UIViewController, CurrencyListViewProtoc
     }
     
     private func setupView() {
+        view.backgroundColor = .white
+        view.addSubview(stackView)
+        stackView.snapMargins(to: view, edges: UIEdgeInsets(margin: 16), except: [.top, .bottom])
+        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        stackView.addArrangedSubview(currencyLabel)
+        stackView.addArrangedSubview(dateLabel)
+        
         tableView.register(CurrencyListCell.self, forCellReuseIdentifier: CurrencyListCell.reuseKey)
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
         
         view.addSubview(tableView)
-        tableView.snapMargins()
+        tableView.snapMargins(to: view, edges: .zero, except: [.top])
         
-        viewModel?.error.subscribe(onNext: { error in
-            
-        }).disposed(by: bag)
+        tableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16).isActive = true
         
         let settingsBarButton = UIBarButtonItem(image: UIImage(named: "cogIcon"), style: .plain, target: self, action: #selector(settingTapped))
+        navigationItem.leftBarButtonItem = settingsBarButton
+        
+        let chartsBarButton = UIBarButtonItem(image: UIImage(named: "chartIcon"), style: .plain, target: self, action: #selector(chartsTapped))
+               navigationItem.rightBarButtonItem = chartsBarButton
     }
     
     @objc private func settingTapped() {
         viewModel?.settingsTapped()
     }
     
-    func updateTable() {
+    @objc private func chartsTapped() {
+        viewModel?.chartsTapped()
+    }
+    
+    func updateView() {
         tableView.reloadData()
+        
+        currencyLabel.text = "Current reference: \(viewModel?.rate?.base.rawValue ?? "")"
+        currencyLabel.sizeToFit()
+        
+        dateLabel.text = viewModel?.rate?.date.dateOnly
+        dateLabel.sizeToFit()
     }
 }
 

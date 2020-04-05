@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol CoordinatorProtocol: AnyObject {
-    @discardableResult func start()
+    func start()
 }
 
 public class Coordinator: CoordinatorProtocol {

@@ -10,7 +10,7 @@ import Foundation
 
 extension NumberFormatter {
     
-    private(set) static var currency: NumberFormatter = {
+    static let currency: NumberFormatter = {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.fractionDigits = 2

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RxSwift
 
 public protocol CurrencyListNavigable {
     var goToSettings: (() -> Void)? { get set }
@@ -16,7 +15,7 @@ public protocol CurrencyListNavigable {
 
 public protocol CurrencyListViewProtocol: AnyObject {
     var viewModel: CurrencyListViewModelProtocol? { get set }
-    func updateTable()
+    func updateView()
 }
 
 public protocol CurrencyListViewModelProtocol: ErrorViewable {
@@ -25,13 +24,14 @@ public protocol CurrencyListViewModelProtocol: ErrorViewable {
     func viewDidLoad()
     func rateSelected(indexPath: IndexPath)
     func settingsTapped()
+    func chartsTapped()
 }
 
 final public class CurrencyListViewModel: CurrencyListViewModelProtocol {
-    public var error = PublishSubject<Error>()
+    public var error: Error?
     public var rate: Rate? {
         didSet {
-            managedView?.updateTable()
+            managedView?.updateView()
         }
     }
     
@@ -50,17 +50,21 @@ final public class CurrencyListViewModel: CurrencyListViewModelProtocol {
                 case .success(let rate):
                     self?.rate = rate
                 case .failure(let error):
-                    self?.error.onNext(error)
+                    self?.error = error
                 }
             }
         }
     }
     
     public func rateSelected(indexPath: IndexPath) {
-        navigation.goToCurrencyHistory?()
+       
     }
     
     public func settingsTapped() {
         navigation.goToSettings?()
+    }
+    
+    public func chartsTapped() {
+        navigation.goToCurrencyHistory?()
     }
 }

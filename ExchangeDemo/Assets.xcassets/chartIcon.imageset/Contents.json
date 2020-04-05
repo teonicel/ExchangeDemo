@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "cogIcon.png",
+      "filename" : "chartIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "cogIcon@2x.png",
+      "filename" : "chartIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "cogIcon@3x.png",
+      "filename" : "chartIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
