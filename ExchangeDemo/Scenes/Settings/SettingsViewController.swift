@@ -58,7 +58,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
         currencyPickerView.delegate = self
         currencyPickerView.dataSource = self
         
-        refreshSegmentedControl.addTarget(self, action: #selector(onRefreshTimeChanged), for: .editingChanged)
+        refreshSegmentedControl.addTarget(self, action: #selector(onRefreshTimeChanged), for: .valueChanged)
     }
     
     @objc private func onRefreshTimeChanged() {
@@ -67,15 +67,23 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
     
     func updateView() {
         currencyPickerView.reloadAllComponents()
-        viewModel?.refreshTimes.forEach {
+        currencyPickerView.selectRow(viewModel?.selectedCurrencyIndex ?? 0, inComponent: 0, animated: false)
+        
+        refreshSegmentedControl.removeAllSegments()
+        viewModel?.refreshRates.forEach {
             refreshSegmentedControl.insertSegment(withTitle: $0.description, at: refreshSegmentedControl.numberOfSegments, animated: true)
         }
+        refreshSegmentedControl.selectedSegmentIndex = viewModel?.selectedRefreshIndex ?? 0
     }
 }
 
 extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         viewModel?.currencySelected(index: row)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return viewModel?.currencies[safe: row]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

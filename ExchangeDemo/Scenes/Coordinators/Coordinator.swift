@@ -34,3 +34,14 @@ public class Coordinator: CoordinatorProtocol {
         childCoordinators.remove(coordinator)
     }
 }
+
+public protocol ErrorNavigable {
+    var goToError: ((Error) -> Void)? { get set }
+}
+
+extension Coordinator {
+    public func goToError(error: Error) {
+        let alertViewController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        router.pushViewController(alertViewController, animated: true)
+    }
+}

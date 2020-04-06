@@ -18,6 +18,7 @@ final public class SceneModuleFactory: SceneModuleFactoryProtocol {
     
     func makeExchangeListModule() -> (vc: Presentable, nav: CurrencyListNavigable) {
         final class CurrencyListNav: CurrencyListNavigable {
+            var goToError: ((Error) -> Void)?
             var goToCurrencyHistory: (() -> Void)?
             var goToSettings: (() -> Void)?
         }
@@ -32,6 +33,7 @@ final public class SceneModuleFactory: SceneModuleFactoryProtocol {
     func makeExchangeHistoryModule() -> (vc: Presentable, nav: CurrencyHistoryNavigable) {
         final class CurrencyHistoryNav: CurrencyHistoryNavigable {
             var goBack: (() -> Void)?
+            var goToError: ((Error) -> Void)?
         }
         let nav = CurrencyHistoryNav()
         let vm = CurrencyHistoryViewModel(navigation: nav)

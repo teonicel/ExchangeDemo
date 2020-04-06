@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol CurrencyListNavigable {
+public protocol CurrencyListNavigable: ErrorNavigable {
     var goToSettings: (() -> Void)? { get set }
     var goToCurrencyHistory: (() -> Void)? { get set }
 }
@@ -18,7 +18,7 @@ public protocol CurrencyListViewProtocol: AnyObject {
     func updateView()
 }
 
-public protocol CurrencyListViewModelProtocol: ErrorViewable {
+public protocol CurrencyListViewModelProtocol {
     var managedView: CurrencyListViewProtocol? { get set }
     var rate: Rate? { get set }
     func viewDidLoad()
@@ -28,7 +28,6 @@ public protocol CurrencyListViewModelProtocol: ErrorViewable {
 }
 
 final public class CurrencyListViewModel: CurrencyListViewModelProtocol {
-    public var error: Error?
     public var rate: Rate? {
         didSet {
             managedView?.updateView()
@@ -44,13 +43,17 @@ final public class CurrencyListViewModel: CurrencyListViewModelProtocol {
     }
     
     public func viewDidLoad() {
+        getData()
+    }
+    
+    private func getData() {
         ExchangeConnection().getRates { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let rate):
                     self?.rate = rate
                 case .failure(let error):
-                    self?.error = error
+                    self?.navigation.goToError?(error)
                 }
             }
         }

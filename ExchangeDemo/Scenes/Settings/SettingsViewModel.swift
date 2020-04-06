@@ -42,8 +42,9 @@ final public class SettingsViewModel: SettingsViewModelProtocol {
     }
     
     public func viewDidLoad() {
-        
         currencies = Currency.allCases.map { $0.rawValue }
+        selectedRefreshIndex = refreshRates.firstIndex(of: Settings.updateInterval) ?? 0
+        selectedCurrencyIndex = currencies.firstIndex(of: Settings.baseCurrency.rawValue) ?? 0
         managedView?.updateView()
     }
     

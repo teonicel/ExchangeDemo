@@ -20,10 +20,10 @@ final public class Settings {
     
     public static var baseCurrency: Currency {
         set {
-            CodablePersistency.pack(object: newValue, key: "updateInterval")
+            CodablePersistency.pack(object: newValue, key: "baseCurrency")
         }
         get {
-            return CodablePersistency.unpack(key: "updateInterval") ?? .EUR
+            return CodablePersistency.unpack(key: "baseCurrency") ?? .EUR
         }
     }
 }

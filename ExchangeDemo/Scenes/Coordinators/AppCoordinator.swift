@@ -25,6 +25,9 @@ final public class AppCoordinator: Coordinator {
         module.nav.goToSettings = { [weak self] in
             self?.goToSettings()
         }
+        module.nav.goToError = { [weak self] error in
+            self?.goToError(error: error)
+        }
         guard let viewController = module.vc.toPresent() else { return }
         router.setViewControllers([viewController], animated: true)
     }
@@ -33,6 +36,9 @@ final public class AppCoordinator: Coordinator {
         var module = sceneFactory.makeExchangeHistoryModule()
         module.nav.goBack = { [weak self] in
             self?.router.popViewController(animated: true)
+        }
+        module.nav.goToError = { [weak self] error in
+            self?.goToError(error: error)
         }
         guard let viewController = module.vc.toPresent() else { return }
         router.pushViewController(viewController, animated: true)

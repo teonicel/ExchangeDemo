@@ -24,7 +24,6 @@
 		ABC57AB224366FE900A8E901 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AB124366FE900A8E901 /* UITableViewCell+Extensions.swift */; };
 		ABC57AB424367F0E00A8E901 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AB324367F0E00A8E901 /* Collection+Extensions.swift */; };
 		ABC57AB624367F9B00A8E901 /* Autolayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AB524367F9B00A8E901 /* Autolayout+Extensions.swift */; };
-		ABC57AB8243688ED00A8E901 /* ErrorViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AB7243688ED00A8E901 /* ErrorViewable.swift */; };
 		ABC57ABA24368B6A00A8E901 /* CurrencyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AB924368B6A00A8E901 /* CurrencyListCell.swift */; };
 		ABC57ABC2436900500A8E901 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57ABB2436900500A8E901 /* NumberFormatter+Extensions.swift */; };
 		ABC57AC324372E2900A8E901 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AC224372E2900A8E901 /* DateFormatter.swift */; };
@@ -38,6 +37,10 @@
 		ABC57AD5243A2FD800A8E901 /* CodablePersistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AD4243A2FD800A8E901 /* CodablePersistency.swift */; };
 		ABC57AD9243A483800A8E901 /* Decimal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AD8243A483800A8E901 /* Decimal+Extensions.swift */; };
 		ABC57ADB243A4A5F00A8E901 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57ADA243A4A5F00A8E901 /* Date+Extensions.swift */; };
+		ABC57AE4243AFEC100A8E901 /* CurrencyHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AE3243AFEC100A8E901 /* CurrencyHistoryCell.swift */; };
+		ABC57AEC243B03AE00A8E901 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AE9243B03AE00A8E901 /* ChartSeries.swift */; };
+		ABC57AED243B03AE00A8E901 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AEA243B03AE00A8E901 /* ChartColors.swift */; };
+		ABC57AEE243B03AE00A8E901 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AEB243B03AE00A8E901 /* Chart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +74,6 @@
 		ABC57AB124366FE900A8E901 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		ABC57AB324367F0E00A8E901 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		ABC57AB524367F9B00A8E901 /* Autolayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Autolayout+Extensions.swift"; sourceTree = "<group>"; };
-		ABC57AB7243688ED00A8E901 /* ErrorViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewable.swift; sourceTree = "<group>"; };
 		ABC57AB924368B6A00A8E901 /* CurrencyListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListCell.swift; sourceTree = "<group>"; };
 		ABC57ABB2436900500A8E901 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		ABC57AC224372E2900A8E901 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -85,6 +87,10 @@
 		ABC57AD4243A2FD800A8E901 /* CodablePersistency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePersistency.swift; sourceTree = "<group>"; };
 		ABC57AD8243A483800A8E901 /* Decimal+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Extensions.swift"; sourceTree = "<group>"; };
 		ABC57ADA243A4A5F00A8E901 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		ABC57AE3243AFEC100A8E901 /* CurrencyHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHistoryCell.swift; sourceTree = "<group>"; };
+		ABC57AE9243B03AE00A8E901 /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
+		ABC57AEA243B03AE00A8E901 /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
+		ABC57AEB243B03AE00A8E901 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,7 @@
 			children = (
 				AB9FF5702435B9A500089AC9 /* AppDelegate.swift */,
 				AB9FF5722435B9A500089AC9 /* SceneDelegate.swift */,
+				ABC57AE5243B016100A8E901 /* Components */,
 				ABC57ACD2439E62300A8E901 /* Storages */,
 				ABC57AB024366F9500A8E901 /* Extensions */,
 				AB9FF5972435BA1000089AC9 /* Scenes */,
@@ -162,10 +169,9 @@
 			children = (
 				ABC57AC62437528800A8E901 /* Coordinators */,
 				AB9FF5A72435BADF00089AC9 /* SceneModuleFactory.swift */,
-				AB9FF59A2435BA5000089AC9 /* Settings */,
-				AB9FF5992435BA4000089AC9 /* ExchangeHistory */,
 				AB9FF5982435BA2500089AC9 /* ExchangeList */,
-				ABC57AB7243688ED00A8E901 /* ErrorViewable.swift */,
+				AB9FF5992435BA4000089AC9 /* ExchangeHistory */,
+				AB9FF59A2435BA5000089AC9 /* Settings */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 			children = (
 				AB9FF59F2435BAA400089AC9 /* CurrencyHistoryViewController.swift */,
 				AB9FF5A02435BAA400089AC9 /* CurrencyHistoryViewModel.swift */,
+				ABC57AE3243AFEC100A8E901 /* CurrencyHistoryCell.swift */,
 			);
 			path = ExchangeHistory;
 			sourceTree = "<group>";
@@ -232,6 +239,24 @@
 				ABC57AD4243A2FD800A8E901 /* CodablePersistency.swift */,
 			);
 			path = Storages;
+			sourceTree = "<group>";
+		};
+		ABC57AE5243B016100A8E901 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ABC57AE8243B039900A8E901 /* Chart */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		ABC57AE8243B039900A8E901 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				ABC57AEB243B03AE00A8E901 /* Chart.swift */,
+				ABC57AEA243B03AE00A8E901 /* ChartColors.swift */,
+				ABC57AE9243B03AE00A8E901 /* ChartSeries.swift */,
+			);
+			path = Chart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +370,7 @@
 				AB9FF5712435B9A500089AC9 /* AppDelegate.swift in Sources */,
 				AB9FF5A52435BAC200089AC9 /* SettingsViewController.swift in Sources */,
 				AB9FF59D2435BA8900089AC9 /* CurrencyListViewModel.swift in Sources */,
+				ABC57AE4243AFEC100A8E901 /* CurrencyHistoryCell.swift in Sources */,
 				ABC57AC52437507A00A8E901 /* UIEdgesInsets.swift in Sources */,
 				AB9FF5AA2435BB0000089AC9 /* ExchangeConnection.swift in Sources */,
 				ABC57AC82437529800A8E901 /* Coordinator.swift in Sources */,
@@ -355,12 +381,14 @@
 				ABC57ACC2437539000A8E901 /* UIViewController+Extensions.swift in Sources */,
 				AB9FF59E2435BA8900089AC9 /* CurrencyListViewController.swift in Sources */,
 				ABC57AD1243A1D5000A8E901 /* UIStackview+Extensions.swift in Sources */,
-				ABC57AB8243688ED00A8E901 /* ErrorViewable.swift in Sources */,
+				ABC57AED243B03AE00A8E901 /* ChartColors.swift in Sources */,
 				ABC57ACA243752A500A8E901 /* AppCoordinator.swift in Sources */,
 				AB9FF5732435B9A500089AC9 /* SceneDelegate.swift in Sources */,
 				ABC57AB624367F9B00A8E901 /* Autolayout+Extensions.swift in Sources */,
+				ABC57AEE243B03AE00A8E901 /* Chart.swift in Sources */,
 				ABC57AB224366FE900A8E901 /* UITableViewCell+Extensions.swift in Sources */,
 				ABC57AD3243A2F6200A8E901 /* Settings.swift in Sources */,
+				ABC57AEC243B03AE00A8E901 /* ChartSeries.swift in Sources */,
 				AB9FF5A82435BADF00089AC9 /* SceneModuleFactory.swift in Sources */,
 				ABC57ACF243A1C1400A8E901 /* UILabel+Extenions.swift in Sources */,
 				AB9FF5A12435BAA400089AC9 /* CurrencyHistoryViewController.swift in Sources */,
