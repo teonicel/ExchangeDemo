@@ -26,8 +26,9 @@ extension ExchangeError: Error {
 }
 
 final public class ExchangeConnection {
-    public func getRates(completion: @escaping (Result<Rate, Error>) -> Void) {
-        let urlString = "https://api.exchangeratesapi.io/latest"
+    public var baseURLString = "https://api.exchangeratesapi.io"
+    public func getLatestRates(completion: @escaping (Result<Rate, Error>) -> Void) {
+        let urlString = "\(baseURLString)/latest"
         AF.request(urlString).responseData { (afData) in
             
             if let data = afData.data {
@@ -44,6 +45,53 @@ final public class ExchangeConnection {
             }
         }
     }
+    
+    public func getRates(startDate: Date, endDate: Date, currencies: [Currency], completion: @escaping (Result<[CurrencyRecord], Error>) -> Void) {
+        let start = startDate.dateOnly
+        let end = endDate.dateOnly
+        let symbols = currencies.map { $0.rawValue }.joined(separator: ",")
+        let urlString = "\(baseURLString)/history?start_at=\(start)&end_at=\(end)&symbols=\(symbols)"
+        AF.request(urlString).responseData { (afData) in
+            
+            if let data = afData.data {
+                do{
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .formatted(.dateOnly)
+                    let decoded = try decoder.decode(MultiRatePayload.self, from: data)
+                    let df = DateFormatter.dateOnly
+//                    var currencyChartDict = [Currency: [[Date: Decimal]]]()
+                    var currencyRecords = [CurrencyRecord]()
+                    for (k,v) in decoded.rates {
+                        let date = df.date(from: k) ?? Date()
+                        for (c, d) in v {
+                            if let currency = Currency(rawValue: c) {
+                                currencyRecords.append(CurrencyRecord(currency: currency,
+                                                                      value: d,
+                                                                      date: date))
+                            }
+                        }
+                    }
+                    
+                    completion(.success(currencyRecords))
+                } catch{
+                    completion(.failure(ExchangeError.decodingError))
+                }
+            } else {
+                completion(.failure(ExchangeError.noData))
+            }
+        }
+    }
+}
+
+private struct MultiRatePayload: Decodable {
+    let rates: [String: [String: Decimal]]
+    let base: Currency
+}
+
+public struct CurrencyRecord {
+    let currency: Currency
+    let value: Decimal
+    let date: Date
 }
 
 public struct Rate: Decodable {

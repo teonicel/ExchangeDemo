@@ -12,4 +12,8 @@ extension Date {
     var dateOnly: String {
         return DateFormatter.dateOnly.string(from: self)
     }
+    
+    var dayMonth: String {
+        return DateFormatter.dayMonth.string(from: self)
+    }
 }

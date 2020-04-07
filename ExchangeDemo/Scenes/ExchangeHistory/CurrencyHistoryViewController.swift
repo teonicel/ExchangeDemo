@@ -38,14 +38,25 @@ class CurrencyHistoryViewController: UIViewController, CurrencyHistoryViewProtoc
 }
 
 extension CurrencyHistoryViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        viewModel?.currencies.count ?? 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.charts?.count ?? 0
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel?.currencies[safe: section]?.rawValue
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyHistoryCell.reuseKey, for: indexPath)
-        if let cellData = viewModel?.charts?[safe: indexPath.row], let currencyCell = cell as? CurrencyHistoryCell {
-            currencyCell.config(with: cellData)
+        if let currency = viewModel?.currencies[safe: indexPath.section],
+            let cellData = viewModel?.chartData(for: currency),
+            let currencyCell = cell as? CurrencyHistoryCell {
+            
+            currencyCell.config(with: cellData.chartSeries, labels: cellData.labels)
             return currencyCell
         }
         return cell

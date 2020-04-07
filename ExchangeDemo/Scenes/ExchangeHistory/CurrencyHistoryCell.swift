@@ -30,6 +30,9 @@ class CurrencyHistoryCell: UITableViewCell {
         chart.xLabelsFormatter = { labelIndex, labelValue -> String in
             labels[safe: labelIndex] ?? ""
         }
+        chart.yLabelsFormatter = { labelIndex, labelValue -> String in
+            NumberFormatter.fourDigits.string(for: labelValue) ?? ""
+        }
         chart.add(series)
     }
 }

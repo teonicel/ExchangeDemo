@@ -17,24 +17,31 @@ public protocol CurrencyHistoryViewProtocol: AnyObject {
     func updateView()
 }
 
+public typealias ChartData = (chartSeries: ChartSeries, labels: [String])
+
 public protocol CurrencyHistoryViewModelProtocol {
     var managedView: CurrencyHistoryViewProtocol? { get set }
-    var charts: [ChartSeries]? { get set }
-    var dateLabels: [String]? { get set }
+    var currencies: [Currency] { get }
+    func chartData(for currency: Currency) -> ChartData?
     func viewDidLoad()
 }
 
 final public class CurrencyHistoryViewModel: CurrencyHistoryViewModelProtocol {
-    public var dateLabels: [String]?
+    public var currencies: [Currency] {
+        return recordsMap.map { $0.key }
+    }
     
-    public var charts: [ChartSeries]? {
+    public func chartData(for currency: Currency) -> ChartData? {
+        recordsMap[currency]
+    }
+    
+    private var recordsMap = [Currency: ChartData]() {
         didSet {
             managedView?.updateView()
         }
     }
     
     public weak var managedView: CurrencyHistoryViewProtocol?
-    
     private var navigation: CurrencyHistoryNavigable
     
     init(navigation: CurrencyHistoryNavigable) {
@@ -56,22 +63,32 @@ final public class CurrencyHistoryViewModel: CurrencyHistoryViewModelProtocol {
             }
         }
         
-        dateLabels = dates.map { DateFormatter.dateOnly.string(from: $0) }
-        charts = [
-            ChartSeries([3, 2, 1, 6, 5, 0, 9, 8, 7, 1]),
-            ChartSeries([3, 2, 1, 6, 7, 0, 5, 4, 9, 8]),
-            ChartSeries([3, 5, 4, 9, 8, 0, 1, 2, 1, 6])
-        ]
-        
-//        ExchangeConnection().getRates { [weak self] result in
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .success(let rate):
-//                    self?.rate = rate
-//                case .failure(let error):
-//                    self?.navigation.goToError?(error)
-//                }
-//            }
-//        }
+        ExchangeConnection().getRates(startDate: dates.last ?? Date(),
+                                      endDate:  dates.first ?? Date(),
+                                      currencies: [.BGN, .RON, .USD]) { [weak self] result in
+                                        switch result {
+                                        case .success(let records):
+                                            guard let parsed = self?.parse(records: records) else { return }
+                                            DispatchQueue.main.async {
+                                                self?.recordsMap = parsed
+                                            }
+                                        case .failure(let error):
+                                            DispatchQueue.main.async {
+                                                self?.navigation.goToError?(error)
+                                            }
+                                        }
+        }
+    }
+    
+    private func parse(records: [CurrencyRecord]) ->  [Currency: (ChartSeries, [String])] {
+        let currencies = records.map { $0.currency }.unique
+        var recordMaps = [Currency: ChartData]()
+        for currency in currencies {
+            let filteredSorted = records.filter { $0.currency == currency}.sorted(by: { $0.date < $1.date })
+            let chartSeries = ChartSeries(filteredSorted.map { $0.value.doubleValue })
+            let labels = filteredSorted.map { $0.date.dayMonth }
+            recordMaps[currency] = (chartSeries, labels)
+        }
+        return recordMaps
     }
 }

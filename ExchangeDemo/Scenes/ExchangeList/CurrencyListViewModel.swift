@@ -22,6 +22,7 @@ public protocol CurrencyListViewModelProtocol {
     var managedView: CurrencyListViewProtocol? { get set }
     var rate: Rate? { get set }
     func viewDidLoad()
+    func viewDidAppear()
     func rateSelected(indexPath: IndexPath)
     func settingsTapped()
     func chartsTapped()
@@ -38,6 +39,8 @@ final public class CurrencyListViewModel: CurrencyListViewModelProtocol {
     
     private var navigation: CurrencyListNavigable
     
+    private var timer: Timer?
+    
     init(navigation: CurrencyListNavigable) {
         self.navigation = navigation
     }
@@ -46,12 +49,17 @@ final public class CurrencyListViewModel: CurrencyListViewModelProtocol {
         getData()
     }
     
-    private func getData() {
-        ExchangeConnection().getRates { [weak self] result in
+    public func viewDidAppear() {
+        getData()
+    }
+    
+    @objc private func getData() {
+        ExchangeConnection().getLatestRates { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let rate):
                     self?.rate = rate
+                    self?.startTimer()
                 case .failure(let error):
                     self?.navigation.goToError?(error)
                 }
@@ -69,5 +77,14 @@ final public class CurrencyListViewModel: CurrencyListViewModelProtocol {
     
     public func chartsTapped() {
         navigation.goToCurrencyHistory?()
+    }
+    
+    private func startTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: Settings.updateInterval, target: self, selector: #selector(getData), userInfo: nil, repeats: false)
+    }
+    
+    deinit {
+        timer?.invalidate()
     }
 }

@@ -10,12 +10,19 @@ import Foundation
 
 extension NumberFormatter {
     
-    static let currency: NumberFormatter = {
+    static let twoDigits: NumberFormatter = {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.fractionDigits = 2
         return numberFormatter
     }()
+    
+    static let fourDigits: NumberFormatter = {
+           let numberFormatter = NumberFormatter()
+           numberFormatter.numberStyle = .decimal
+           numberFormatter.fractionDigits = 4
+           return numberFormatter
+       }()
     
     public var fractionDigits: Int {
         get {

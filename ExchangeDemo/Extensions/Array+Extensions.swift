@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+extension Array where Element : Equatable {
+    var unique: [Element] {
+        var uniqueValues: [Element] = []
+        forEach {
+            if !uniqueValues.contains($0) {
+                uniqueValues.append($0)
+            }
+        }
+        return uniqueValues
+    }
+}

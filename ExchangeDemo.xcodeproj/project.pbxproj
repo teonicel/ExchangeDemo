@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB2B7E0C243C519100212776 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2B7E0B243C519100212776 /* Array+Extensions.swift */; };
 		AB9FF5712435B9A500089AC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF5702435B9A500089AC9 /* AppDelegate.swift */; };
 		AB9FF5732435B9A500089AC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF5722435B9A500089AC9 /* SceneDelegate.swift */; };
 		AB9FF57A2435B9A700089AC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9FF5792435B9A700089AC9 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB2B7E0B243C519100212776 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		AB9FF56D2435B9A500089AC9 /* ExchangeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9FF5702435B9A500089AC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB9FF5722435B9A500089AC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,15 +136,15 @@
 			isa = PBXGroup;
 			children = (
 				AB9FF5702435B9A500089AC9 /* AppDelegate.swift */,
-				AB9FF5722435B9A500089AC9 /* SceneDelegate.swift */,
+				AB9FF5792435B9A700089AC9 /* Assets.xcassets */,
 				ABC57AE5243B016100A8E901 /* Components */,
-				ABC57ACD2439E62300A8E901 /* Storages */,
+				AB9FF5962435BA0700089AC9 /* Connections */,
 				ABC57AB024366F9500A8E901 /* Extensions */,
 				AB9FF5972435BA1000089AC9 /* Scenes */,
-				AB9FF5962435BA0700089AC9 /* Connections */,
-				AB9FF5792435B9A700089AC9 /* Assets.xcassets */,
-				AB9FF57B2435B9A700089AC9 /* LaunchScreen.storyboard */,
+				ABC57ACD2439E62300A8E901 /* Storages */,
 				AB9FF57E2435B9A700089AC9 /* Info.plist */,
+				AB9FF57B2435B9A700089AC9 /* LaunchScreen.storyboard */,
+				AB9FF5722435B9A500089AC9 /* SceneDelegate.swift */,
 			);
 			path = ExchangeDemo;
 			sourceTree = "<group>";
@@ -168,9 +170,9 @@
 			isa = PBXGroup;
 			children = (
 				ABC57AC62437528800A8E901 /* Coordinators */,
-				AB9FF5A72435BADF00089AC9 /* SceneModuleFactory.swift */,
-				AB9FF5982435BA2500089AC9 /* ExchangeList */,
 				AB9FF5992435BA4000089AC9 /* ExchangeHistory */,
+				AB9FF5982435BA2500089AC9 /* ExchangeList */,
+				AB9FF5A72435BADF00089AC9 /* SceneModuleFactory.swift */,
 				AB9FF59A2435BA5000089AC9 /* Settings */,
 			);
 			path = Scenes;
@@ -179,9 +181,9 @@
 		AB9FF5982435BA2500089AC9 /* ExchangeList */ = {
 			isa = PBXGroup;
 			children = (
+				ABC57AB924368B6A00A8E901 /* CurrencyListCell.swift */,
 				AB9FF59C2435BA8900089AC9 /* CurrencyListViewController.swift */,
 				AB9FF59B2435BA8900089AC9 /* CurrencyListViewModel.swift */,
-				ABC57AB924368B6A00A8E901 /* CurrencyListCell.swift */,
 			);
 			path = ExchangeList;
 			sourceTree = "<group>";
@@ -189,9 +191,9 @@
 		AB9FF5992435BA4000089AC9 /* ExchangeHistory */ = {
 			isa = PBXGroup;
 			children = (
+				ABC57AE3243AFEC100A8E901 /* CurrencyHistoryCell.swift */,
 				AB9FF59F2435BAA400089AC9 /* CurrencyHistoryViewController.swift */,
 				AB9FF5A02435BAA400089AC9 /* CurrencyHistoryViewModel.swift */,
-				ABC57AE3243AFEC100A8E901 /* CurrencyHistoryCell.swift */,
 			);
 			path = ExchangeHistory;
 			sourceTree = "<group>";
@@ -208,17 +210,18 @@
 		ABC57AB024366F9500A8E901 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				ABC57AB124366FE900A8E901 /* UITableViewCell+Extensions.swift */,
-				ABC57AB324367F0E00A8E901 /* Collection+Extensions.swift */,
+				AB2B7E0B243C519100212776 /* Array+Extensions.swift */,
 				ABC57AB524367F9B00A8E901 /* Autolayout+Extensions.swift */,
-				ABC57ABB2436900500A8E901 /* NumberFormatter+Extensions.swift */,
+				ABC57AB324367F0E00A8E901 /* Collection+Extensions.swift */,
+				ABC57ADA243A4A5F00A8E901 /* Date+Extensions.swift */,
 				ABC57AC224372E2900A8E901 /* DateFormatter.swift */,
+				ABC57AD8243A483800A8E901 /* Decimal+Extensions.swift */,
+				ABC57ABB2436900500A8E901 /* NumberFormatter+Extensions.swift */,
 				ABC57AC42437507A00A8E901 /* UIEdgesInsets.swift */,
-				ABC57ACB2437539000A8E901 /* UIViewController+Extensions.swift */,
 				ABC57ACE243A1C1400A8E901 /* UILabel+Extenions.swift */,
 				ABC57AD0243A1D5000A8E901 /* UIStackview+Extensions.swift */,
-				ABC57AD8243A483800A8E901 /* Decimal+Extensions.swift */,
-				ABC57ADA243A4A5F00A8E901 /* Date+Extensions.swift */,
+				ABC57AB124366FE900A8E901 /* UITableViewCell+Extensions.swift */,
+				ABC57ACB2437539000A8E901 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -235,8 +238,8 @@
 		ABC57ACD2439E62300A8E901 /* Storages */ = {
 			isa = PBXGroup;
 			children = (
-				ABC57AD2243A2F6200A8E901 /* Settings.swift */,
 				ABC57AD4243A2FD800A8E901 /* CodablePersistency.swift */,
+				ABC57AD2243A2F6200A8E901 /* Settings.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				ABC57AC52437507A00A8E901 /* UIEdgesInsets.swift in Sources */,
 				AB9FF5AA2435BB0000089AC9 /* ExchangeConnection.swift in Sources */,
 				ABC57AC82437529800A8E901 /* Coordinator.swift in Sources */,
+				AB2B7E0C243C519100212776 /* Array+Extensions.swift in Sources */,
 				ABC57AB424367F0E00A8E901 /* Collection+Extensions.swift in Sources */,
 				ABC57ABC2436900500A8E901 /* NumberFormatter+Extensions.swift in Sources */,
 				ABC57AC324372E2900A8E901 /* DateFormatter.swift in Sources */,

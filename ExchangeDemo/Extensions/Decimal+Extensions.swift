@@ -10,6 +10,9 @@ import Foundation
 
 extension Decimal {
     var exchangeString: String {
-        return NumberFormatter.currency.string(for: self) ?? ""
+        return NumberFormatter.twoDigits.string(for: self) ?? ""
+    }
+    var doubleValue: Double {
+        return (self as NSDecimalNumber).doubleValue
     }
 }
