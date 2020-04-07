@@ -23,6 +23,7 @@ public protocol CurrencyListViewModelProtocol {
     var rate: Rate? { get set }
     func viewDidLoad()
     func viewDidAppear()
+    func viewDidDisappear()
     func rateSelected(indexPath: IndexPath)
     func settingsTapped()
     func chartsTapped()
@@ -51,6 +52,10 @@ final public class CurrencyListViewModel: CurrencyListViewModelProtocol {
     
     public func viewDidAppear() {
         getData()
+    }
+    
+    public func viewDidDisappear() {
+        timer?.invalidate()
     }
     
     @objc private func getData() {

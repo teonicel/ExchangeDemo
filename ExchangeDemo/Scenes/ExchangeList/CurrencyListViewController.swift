@@ -33,6 +33,11 @@ final class CurrencyListViewController: UIViewController, CurrencyListViewProtoc
         viewModel?.viewDidAppear()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel?.viewDidDisappear()
+    }
+    
     private func setupView() {
         view.backgroundColor = .white
         view.addSubview(stackView)
