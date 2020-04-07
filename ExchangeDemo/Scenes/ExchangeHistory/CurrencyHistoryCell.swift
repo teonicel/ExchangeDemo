@@ -26,7 +26,10 @@ class CurrencyHistoryCell: UITableViewCell {
         chart.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
-    public func config(with series: ChartSeries) {
+    public func config(with series: ChartSeries, labels: [String]) {
+        chart.xLabelsFormatter = { labelIndex, labelValue -> String in
+            labels[safe: labelIndex] ?? ""
+        }
         chart.add(series)
     }
 }
