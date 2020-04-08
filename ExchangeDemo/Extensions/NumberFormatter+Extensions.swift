@@ -17,6 +17,13 @@ extension NumberFormatter {
         return numberFormatter
     }()
     
+    static let fourDigits: NumberFormatter = {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.fractionDigits = 4
+        return numberFormatter
+    }()
+    
     public var fractionDigits: Int {
         get {
             return minimumFractionDigits
