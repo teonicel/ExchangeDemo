@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		AB2B7E0C243C519100212776 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2B7E0B243C519100212776 /* Array+Extensions.swift */; };
+		AB2B7E0F243D0DDA00212776 /* CurrencyListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2B7E0E243D0DDA00212776 /* CurrencyListViewModelTests.swift */; };
 		AB9FF5712435B9A500089AC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF5702435B9A500089AC9 /* AppDelegate.swift */; };
 		AB9FF5732435B9A500089AC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF5722435B9A500089AC9 /* SceneDelegate.swift */; };
 		AB9FF57A2435B9A700089AC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9FF5792435B9A700089AC9 /* Assets.xcassets */; };
 		AB9FF57D2435B9A700089AC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB9FF57B2435B9A700089AC9 /* LaunchScreen.storyboard */; };
-		AB9FF5882435B9A700089AC9 /* ExchangeDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF5872435B9A700089AC9 /* ExchangeDemoTests.swift */; };
 		AB9FF59D2435BA8900089AC9 /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF59B2435BA8900089AC9 /* CurrencyListViewModel.swift */; };
 		AB9FF59E2435BA8900089AC9 /* CurrencyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF59C2435BA8900089AC9 /* CurrencyListViewController.swift */; };
 		AB9FF5A12435BAA400089AC9 /* CurrencyHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF59F2435BAA400089AC9 /* CurrencyHistoryViewController.swift */; };
@@ -21,13 +21,21 @@
 		AB9FF5A62435BAC200089AC9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF5A42435BAC200089AC9 /* SettingsViewModel.swift */; };
 		AB9FF5A82435BADF00089AC9 /* SceneModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF5A72435BADF00089AC9 /* SceneModuleFactory.swift */; };
 		AB9FF5AA2435BB0000089AC9 /* ExchangeConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF5A92435BB0000089AC9 /* ExchangeConnection.swift */; };
+		ABB7ECF1243D8B1600649269 /* ExchangeConnectionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7ECF0243D8B1600649269 /* ExchangeConnectionMock.swift */; };
+		ABB7ECF3243D9C1700649269 /* CurrencyHistoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7ECF2243D9C1700649269 /* CurrencyHistoryViewModelTests.swift */; };
+		ABB7ECF5243DA22F00649269 /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7ECF4243DA22F00649269 /* SettingsViewModelTests.swift */; };
+		ABB7ECF7243DB35800649269 /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7ECF6243DB35800649269 /* ArrayExtensionsTests.swift */; };
+		ABB7ECFB243DB60F00649269 /* CollectionExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7ECFA243DB60F00649269 /* CollectionExtensionsTests.swift */; };
+		ABB7ECFD243DB68D00649269 /* DateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7ECFC243DB68D00649269 /* DateExtensionsTests.swift */; };
+		ABB7ECFF243DBC6400649269 /* DateFormatterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7ECFE243DBC6400649269 /* DateFormatterExtensionsTests.swift */; };
+		ABB7ED01243DBCDA00649269 /* DecimalExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7ED00243DBCDA00649269 /* DecimalExtensionsTests.swift */; };
 		ABC57AAF2435C0E800A8E901 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = ABC57AAE2435C0E800A8E901 /* Alamofire */; };
 		ABC57AB224366FE900A8E901 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AB124366FE900A8E901 /* UITableViewCell+Extensions.swift */; };
 		ABC57AB424367F0E00A8E901 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AB324367F0E00A8E901 /* Collection+Extensions.swift */; };
 		ABC57AB624367F9B00A8E901 /* Autolayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AB524367F9B00A8E901 /* Autolayout+Extensions.swift */; };
 		ABC57ABA24368B6A00A8E901 /* CurrencyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AB924368B6A00A8E901 /* CurrencyListCell.swift */; };
 		ABC57ABC2436900500A8E901 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57ABB2436900500A8E901 /* NumberFormatter+Extensions.swift */; };
-		ABC57AC324372E2900A8E901 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AC224372E2900A8E901 /* DateFormatter.swift */; };
+		ABC57AC324372E2900A8E901 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AC224372E2900A8E901 /* DateFormatter+Extensions.swift */; };
 		ABC57AC52437507A00A8E901 /* UIEdgesInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AC42437507A00A8E901 /* UIEdgesInsets.swift */; };
 		ABC57AC82437529800A8E901 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AC72437529800A8E901 /* Coordinator.swift */; };
 		ABC57ACA243752A500A8E901 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC57AC9243752A500A8E901 /* AppCoordinator.swift */; };
@@ -56,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		AB2B7E0B243C519100212776 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		AB2B7E0D243D0DDA00212776 /* ExchangeDemoTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExchangeDemoTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB2B7E0E243D0DDA00212776 /* CurrencyListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModelTests.swift; sourceTree = "<group>"; };
 		AB9FF56D2435B9A500089AC9 /* ExchangeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9FF5702435B9A500089AC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB9FF5722435B9A500089AC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +73,6 @@
 		AB9FF57C2435B9A700089AC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB9FF57E2435B9A700089AC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB9FF5832435B9A700089AC9 /* ExchangeDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB9FF5872435B9A700089AC9 /* ExchangeDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDemoTests.swift; sourceTree = "<group>"; };
 		AB9FF5892435B9A700089AC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB9FF59B2435BA8900089AC9 /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
 		AB9FF59C2435BA8900089AC9 /* CurrencyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyListViewController.swift; sourceTree = "<group>"; };
@@ -73,12 +82,20 @@
 		AB9FF5A42435BAC200089AC9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		AB9FF5A72435BADF00089AC9 /* SceneModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneModuleFactory.swift; sourceTree = "<group>"; };
 		AB9FF5A92435BB0000089AC9 /* ExchangeConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeConnection.swift; sourceTree = "<group>"; };
+		ABB7ECF0243D8B1600649269 /* ExchangeConnectionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeConnectionMock.swift; sourceTree = "<group>"; };
+		ABB7ECF2243D9C1700649269 /* CurrencyHistoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHistoryViewModelTests.swift; sourceTree = "<group>"; };
+		ABB7ECF4243DA22F00649269 /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelTests.swift; sourceTree = "<group>"; };
+		ABB7ECF6243DB35800649269 /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
+		ABB7ECFA243DB60F00649269 /* CollectionExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensionsTests.swift; sourceTree = "<group>"; };
+		ABB7ECFC243DB68D00649269 /* DateExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionsTests.swift; sourceTree = "<group>"; };
+		ABB7ECFE243DBC6400649269 /* DateFormatterExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensionsTests.swift; sourceTree = "<group>"; };
+		ABB7ED00243DBCDA00649269 /* DecimalExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalExtensionsTests.swift; sourceTree = "<group>"; };
 		ABC57AB124366FE900A8E901 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		ABC57AB324367F0E00A8E901 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		ABC57AB524367F9B00A8E901 /* Autolayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Autolayout+Extensions.swift"; sourceTree = "<group>"; };
 		ABC57AB924368B6A00A8E901 /* CurrencyListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListCell.swift; sourceTree = "<group>"; };
 		ABC57ABB2436900500A8E901 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
-		ABC57AC224372E2900A8E901 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		ABC57AC224372E2900A8E901 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		ABC57AC42437507A00A8E901 /* UIEdgesInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgesInsets.swift; sourceTree = "<group>"; };
 		ABC57AC72437529800A8E901 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ABC57AC9243752A500A8E901 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -152,8 +169,10 @@
 		AB9FF5862435B9A700089AC9 /* ExchangeDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				AB9FF5872435B9A700089AC9 /* ExchangeDemoTests.swift */,
+				ABB7ECF9243DB5EC00649269 /* Extensions */,
+				ABB7ECEF243D8AE600649269 /* ScenesTests */,
 				AB9FF5892435B9A700089AC9 /* Info.plist */,
+				AB2B7E0D243D0DDA00212776 /* ExchangeDemoTests-Bridging-Header.h */,
 			);
 			path = ExchangeDemoTests;
 			sourceTree = "<group>";
@@ -207,6 +226,29 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		ABB7ECEF243D8AE600649269 /* ScenesTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABB7ECF0243D8B1600649269 /* ExchangeConnectionMock.swift */,
+				AB2B7E0E243D0DDA00212776 /* CurrencyListViewModelTests.swift */,
+				ABB7ECF2243D9C1700649269 /* CurrencyHistoryViewModelTests.swift */,
+				ABB7ECF4243DA22F00649269 /* SettingsViewModelTests.swift */,
+			);
+			path = ScenesTests;
+			sourceTree = "<group>";
+		};
+		ABB7ECF9243DB5EC00649269 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABB7ECF6243DB35800649269 /* ArrayExtensionsTests.swift */,
+				ABB7ECFA243DB60F00649269 /* CollectionExtensionsTests.swift */,
+				ABB7ECFC243DB68D00649269 /* DateExtensionsTests.swift */,
+				ABB7ECFE243DBC6400649269 /* DateFormatterExtensionsTests.swift */,
+				ABB7ED00243DBCDA00649269 /* DecimalExtensionsTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		ABC57AB024366F9500A8E901 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,7 +256,7 @@
 				ABC57AB524367F9B00A8E901 /* Autolayout+Extensions.swift */,
 				ABC57AB324367F0E00A8E901 /* Collection+Extensions.swift */,
 				ABC57ADA243A4A5F00A8E901 /* Date+Extensions.swift */,
-				ABC57AC224372E2900A8E901 /* DateFormatter.swift */,
+				ABC57AC224372E2900A8E901 /* DateFormatter+Extensions.swift */,
 				ABC57AD8243A483800A8E901 /* Decimal+Extensions.swift */,
 				ABC57ABB2436900500A8E901 /* NumberFormatter+Extensions.swift */,
 				ABC57AC42437507A00A8E901 /* UIEdgesInsets.swift */,
@@ -318,6 +360,7 @@
 					};
 					AB9FF5822435B9A700089AC9 = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 						TestTargetID = AB9FF56C2435B9A500089AC9;
 					};
 				};
@@ -380,7 +423,7 @@
 				AB2B7E0C243C519100212776 /* Array+Extensions.swift in Sources */,
 				ABC57AB424367F0E00A8E901 /* Collection+Extensions.swift in Sources */,
 				ABC57ABC2436900500A8E901 /* NumberFormatter+Extensions.swift in Sources */,
-				ABC57AC324372E2900A8E901 /* DateFormatter.swift in Sources */,
+				ABC57AC324372E2900A8E901 /* DateFormatter+Extensions.swift in Sources */,
 				ABC57ADB243A4A5F00A8E901 /* Date+Extensions.swift in Sources */,
 				ABC57ACC2437539000A8E901 /* UIViewController+Extensions.swift in Sources */,
 				AB9FF59E2435BA8900089AC9 /* CurrencyListViewController.swift in Sources */,
@@ -406,7 +449,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB9FF5882435B9A700089AC9 /* ExchangeDemoTests.swift in Sources */,
+				ABB7ECF1243D8B1600649269 /* ExchangeConnectionMock.swift in Sources */,
+				ABB7ECFD243DB68D00649269 /* DateExtensionsTests.swift in Sources */,
+				ABB7ECF7243DB35800649269 /* ArrayExtensionsTests.swift in Sources */,
+				AB2B7E0F243D0DDA00212776 /* CurrencyListViewModelTests.swift in Sources */,
+				ABB7ECF3243D9C1700649269 /* CurrencyHistoryViewModelTests.swift in Sources */,
+				ABB7ECFF243DBC6400649269 /* DateFormatterExtensionsTests.swift in Sources */,
+				ABB7ECF5243DA22F00649269 /* SettingsViewModelTests.swift in Sources */,
+				ABB7ED01243DBCDA00649269 /* DecimalExtensionsTests.swift in Sources */,
+				ABB7ECFB243DB60F00649269 /* CollectionExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +638,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EFF46NFJ5B;
 				INFOPLIST_FILE = ExchangeDemoTests/Info.plist;
@@ -598,6 +650,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.teonicel.ExchangeDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeDemoTests/ExchangeDemoTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExchangeDemo.app/ExchangeDemo";
@@ -609,6 +663,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EFF46NFJ5B;
 				INFOPLIST_FILE = ExchangeDemoTests/Info.plist;
@@ -620,6 +675,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.teonicel.ExchangeDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExchangeDemoTests/ExchangeDemoTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExchangeDemo.app/ExchangeDemo";

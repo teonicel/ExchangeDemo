@@ -23,7 +23,8 @@ final public class SceneModuleFactory: SceneModuleFactoryProtocol {
             var goToSettings: (() -> Void)?
         }
         let nav = CurrencyListNav()
-        let vm = CurrencyListViewModel(navigation: nav)
+        let connection = ExchangeConnection()
+        let vm = CurrencyListViewModel(connection: connection, navigation: nav)
         let vc = CurrencyListViewController()
         vm.managedView = vc
         vc.viewModel = vm
@@ -36,7 +37,8 @@ final public class SceneModuleFactory: SceneModuleFactoryProtocol {
             var goToError: ((Error) -> Void)?
         }
         let nav = CurrencyHistoryNav()
-        let vm = CurrencyHistoryViewModel(navigation: nav)
+        let connection = ExchangeConnection()
+        let vm = CurrencyHistoryViewModel(connection: connection, navigation: nav)
         let vc = CurrencyHistoryViewController()
         vm.managedView = vc
         vc.viewModel = vm

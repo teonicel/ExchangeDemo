@@ -25,10 +25,15 @@ extension ExchangeError: Error {
     }
 }
 
-final public class ExchangeConnection {
+public protocol ExchangeConnectionProtocol {
+    func getLatestRates(baseCurrency: Currency, completion: @escaping (Result<Rate, Error>) -> Void)
+    func getRates(startDate: Date, endDate: Date, currencies: [Currency], completion: @escaping (Result<[CurrencyRecord], Error>) -> Void)
+}
+
+final public class ExchangeConnection: ExchangeConnectionProtocol {
     public var baseURLString = "https://api.exchangeratesapi.io"
-    public func getLatestRates(completion: @escaping (Result<Rate, Error>) -> Void) {
-        let urlString = "\(baseURLString)/latest"
+    public func getLatestRates(baseCurrency: Currency, completion: @escaping (Result<Rate, Error>) -> Void) {
+        let urlString = "\(baseURLString)/latest?base=\(baseCurrency.rawValue)"
         AF.request(urlString).responseData { (afData) in
             
             if let data = afData.data {
@@ -94,7 +99,13 @@ public struct CurrencyRecord {
     let date: Date
 }
 
-public struct Rate: Decodable {
+public struct Dummy {
+    let a: String
+    let b: Int
+    let c: [String: String]
+}
+
+public struct Rate: Codable {
     let rates: [[Currency: Decimal]]
     let base: Currency
     let date: Date
@@ -103,6 +114,12 @@ public struct Rate: Decodable {
         case rates
         case base
         case date
+    }
+    
+    init(rates: [[Currency: Decimal]], base: Currency, date: Date) {
+        self.rates = rates
+        self.base = base
+        self.date = date
     }
     
     public init(from decoder: Decoder) throws {

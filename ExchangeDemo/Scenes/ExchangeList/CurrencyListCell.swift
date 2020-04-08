@@ -36,7 +36,7 @@ class CurrencyListCell: UITableViewCell {
     
     public func config(with data: [Currency: Decimal]) {
         currencyLabel.text = data.keys.first?.rawValue ?? ""
-        amountLabel.text = (data.values.first ?? 0).exchangeString
+        amountLabel.text = (data.values.first ?? 0).twoDigitsString
         currencyLabel.sizeToFit()
         amountLabel.sizeToFit()
     }

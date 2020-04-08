@@ -37,13 +37,13 @@ final public class CurrencyListViewModel: CurrencyListViewModelProtocol {
     }
     
     public weak var managedView: CurrencyListViewProtocol?
-    
     private var navigation: CurrencyListNavigable
-    
+    private var connection: ExchangeConnectionProtocol
     private var timer: Timer?
     
-    init(navigation: CurrencyListNavigable) {
+    init(connection: ExchangeConnectionProtocol, navigation: CurrencyListNavigable) {
         self.navigation = navigation
+        self.connection = connection
     }
     
     public func viewDidLoad() {
@@ -59,7 +59,7 @@ final public class CurrencyListViewModel: CurrencyListViewModelProtocol {
     }
     
     @objc private func getData() {
-        ExchangeConnection().getLatestRates { [weak self] result in
+        connection.getLatestRates(baseCurrency: Settings.baseCurrency) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let rate):
@@ -86,7 +86,7 @@ final public class CurrencyListViewModel: CurrencyListViewModelProtocol {
     
     private func startTimer() {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: Settings.updateInterval, target: self, selector: #selector(getData), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: Settings.updateInterval.rawValue, target: self, selector: #selector(getData), userInfo: nil, repeats: false)
     }
     
     deinit {

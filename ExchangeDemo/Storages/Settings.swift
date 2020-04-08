@@ -9,12 +9,12 @@
 import Foundation
 
 final public class Settings {
-    public static var updateInterval: TimeInterval {
+    public static var updateInterval: UpdateInterval {
         set {
             CodablePersistency.pack(object: newValue, key: "updateInterval")
         }
         get {
-            return CodablePersistency.unpack(key: "updateInterval") ?? 3
+            return CodablePersistency.unpack(key: "updateInterval") ?? .fastest
         }
     }
     
@@ -26,4 +26,10 @@ final public class Settings {
             return CodablePersistency.unpack(key: "baseCurrency") ?? .EUR
         }
     }
+}
+
+public enum UpdateInterval: TimeInterval, Codable, CaseIterable {
+    case fastest = 3
+    case fast = 5
+    case normal = 15
 }

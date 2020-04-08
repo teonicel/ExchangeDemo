@@ -9,9 +9,10 @@
 import Foundation
 
 extension Decimal {
-    var exchangeString: String {
+    var twoDigitsString: String {
         return NumberFormatter.twoDigits.string(for: self) ?? ""
     }
+    
     var doubleValue: Double {
         return (self as NSDecimalNumber).doubleValue
     }

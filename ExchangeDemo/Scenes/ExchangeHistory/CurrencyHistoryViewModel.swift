@@ -43,9 +43,11 @@ final public class CurrencyHistoryViewModel: CurrencyHistoryViewModelProtocol {
     
     public weak var managedView: CurrencyHistoryViewProtocol?
     private var navigation: CurrencyHistoryNavigable
+    private var connection: ExchangeConnectionProtocol
     
-    init(navigation: CurrencyHistoryNavigable) {
+    init(connection: ExchangeConnectionProtocol, navigation: CurrencyHistoryNavigable) {
         self.navigation = navigation
+        self.connection = connection
     }
     
     public func viewDidLoad() {
@@ -54,16 +56,13 @@ final public class CurrencyHistoryViewModel: CurrencyHistoryViewModelProtocol {
     
     private func getData() {
         let cal = Calendar.current
-        var date = cal.startOfDay(for: Date())
-        var dates = [Date]()
-        for _ in 1 ... 10 {
-            dates.append(date)
-            if let newDate = cal.date(byAdding: .day, value: -1, to: date) {
-                date = newDate
-            }
+        let date = cal.startOfDay(for: Date())
+        var dates = [date]
+        if let newDate = cal.date(byAdding: .day, value: -9, to: date) {
+            dates.append(newDate)
         }
         
-        ExchangeConnection().getRates(startDate: dates.last ?? Date(),
+        connection.getRates(startDate: dates.last ?? Date(),
                                       endDate:  dates.first ?? Date(),
                                       currencies: [.BGN, .RON, .USD]) { [weak self] result in
                                         switch result {
