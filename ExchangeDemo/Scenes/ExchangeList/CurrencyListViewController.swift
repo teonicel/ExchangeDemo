@@ -41,6 +41,7 @@ final class CurrencyListViewController: UIViewController, CurrencyListViewProtoc
     private func setupView() {
         view.backgroundColor = .white
         view.addSubview(stackView)
+        tableView.backgroundColor = .white
         stackView.snapMargins(to: view, edges: UIEdgeInsets(margin: 16), except: [.top, .bottom])
         stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         stackView.addArrangedSubview(currencyLabel)
